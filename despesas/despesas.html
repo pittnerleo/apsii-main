@@ -7,6 +7,7 @@
     <title>Supermercado Muffatinho</title>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/apsii-main/js/funcgenericas.js"></script>
 </head>
 
 <body>
@@ -68,22 +69,22 @@
         <p class="title">Controle de despesas</p>
         <div class="mb-3">
             <label for="validationCustomUsername" class="form-label">Administrativas: </label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00">
+            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
         <div class="mb-3 fis" >
             <label for="validationCustomUsername" class="form-label">Físicas:</label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00">
+            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
         <div class="mb-3 " >
             <label for="validationCustomUsername" class="form-label">Receita:</label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00">
+            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
         <div class="mb-3 " >
             <label for="validationCustomUsername" class="form-label">Custo Total:</label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00">
+            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
         <button type="button" class="btn btn-danger btn-lucro">Calcular lucro:</button>
-        <input class="form-control lucro" id="exampleFormControlInput1" placeholder="R$ 0,00">
+        <input class="form-control lucro" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
     </main>
     <footer class="bg-danger text-center text-white">

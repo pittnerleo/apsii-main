@@ -7,6 +7,7 @@
     <title>Supermercado Muffatinho</title>
     <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/apsii-main/js/funcgenericas.js"></script>
 </head>
 
 <body>
@@ -75,7 +76,7 @@
             </div>
             <div class="col-md-6 cpf">
                 <label for="inputPassword4" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="inputcpf" placeholder="XXX.XXX.XXX-XX">
+                <input type="text" class="form-control" id="inputcpf" placeholder="XXX.XXX.XXX-XX" onkeypress="return onlynumber();">
             </div>
             <div class="col-12 end">
                 <label for="inputAddress" class="form-label">Endereço</label>
@@ -87,15 +88,12 @@
             </div>
             <div class="col-md-6 tel">
                 <label for="inputEmail4" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="(DDD) XXXXX-XXXX">
+                <input type="text" class="form-control" id="inputEmail4" placeholder="(DDD) XXXXX-XXXX" onkeypress="return onlynumber();">
             </div>
             <button type="button" class="btn btn-danger btn-inserir">Inserir </button>
             
             </form>
-            <button type="button" class="btn btn-danger btn-manipulacao-dados">Alterar</button>
-            <button type="button" class="btn btn-danger btn-manipulacao-dados">Listar</button>
-            <button type="button" class="btn btn-danger btn-manipulacao-dados">Excluir</button>
-            <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
+            <button type="button" class="btn btn-danger btn-manipulacao-dados">Cadastrar</button>
     </main>
     <footer class="bg-danger text-center text-white">
 

@@ -7,6 +7,7 @@
     <title>Supermercado Muffatinho</title>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/apsii-main/js/funcgenericas.js"></script>
 </head>
 
 <body>
@@ -67,12 +68,12 @@
     <main>
         <p class="title">Controle de compras</p>
         <div class="mb-3">
-            <label for="validationCustomUsername" class="form-label">Descrição</label>
-            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira a descrição do produto">
+            <label for="validationCustomUsername" class="form-label">Cód.Barras</label>
+            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira o código de barras do produto">
         </div>
         <div class="mb-3 qtd" >
             <label for="validationCustomUsername" class="form-label">Quantidade</label>
-            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="0">
+            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="0" onkeypress="return onlynumber();">
         </div>
         <p class="fornecedor">Fornecedor:</p>
         <select class="form-select" aria-label="Default select example">

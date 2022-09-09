@@ -8,34 +8,49 @@
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="/apsii-main/js/funcgenericas.js"></script>
   <link href="css/style.css" rel="stylesheet">
-
 </head>
 
 <body class="text-center">
 
   <main class="form-signin w-100 m-auto">
-    <form>
+    <form class="form" id= "form">
       <img class="mb-4" src="img/muffatinho.png" alt="" width="150" height="100">
       <h1 class="h3 mb-3 fw-normal">Fazer login</h1>
 
-      <div class="form-floating success">
+      <div class="form-floating">
         <input type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com">
         <label for="floatingInput">Email ou CPF/CNPJ</label>
-        <small>Error message</small>
       </div>
-      <div class="form-floating error">
+      <div class="form-floating ">
         <input type="password" class="form-control" id="floatingPassword" placeholder="senha" onkeypress="return onlynumber();">
         <label for="floatingPassword">Senha</label>
-        <small>Error message</small>
       </div>
-
+      <div class="msg"></div>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="lembrardemim"> Lembrar de mim </label>
       </div>
-      <a class="w-100 btn btn-lg btn-light" href="../Homepage/homepage.html" role="button">Entrar</a>
+      <a class="w-100 btn btn-lg btn-light" role="button" onclick="logar()">Entrar</a>
     </form>
   </main>
+  
+  <script>
+      
+    function logar(){
+        var login = document.getElementById('floatingInput').value
+        var senha = document.getElementById('floatingPassword').value
+        
+        if(login == "admin@admin.com" && senha == "12345678"){
+            alert('sucesso');
+            window.location.href="/apsii-main/Homepage/homepage.html";
+        }else{
+            alert('Usuario ou senha invalidos');
+        }
+     
+    }
+    
+    </script>
+
 
 </body>
 

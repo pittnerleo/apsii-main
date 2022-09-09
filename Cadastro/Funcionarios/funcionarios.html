@@ -7,6 +7,7 @@
     <title>Supermercado Muffatinho</title>
     <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/apsii-main/js/funcgenericas.js"></script>
 </head>
 
 <body>
@@ -75,11 +76,11 @@
             </div>
             <div class="col-md-6 cpf">
                 <label for="inputPassword4" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="inputcpf" placeholder="XXX.XXX.XXX-XX">
+                <input type="text" class="form-control" id="inputcpf" placeholder="XXX.XXX.XXX-XX" onkeypress="return onlynumber();">
             </div>
             <div class="col-12 tel">
                 <label for="inputAddress" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="(DDD) XXXXX-XXXX">
+                <input type="text" class="form-control" id="inputAddress" placeholder="(DDD) XXXXX-XXXX" onkeypress="return onlynumber();">
             </div>
             <div class="col-md-6 email">
                 <label for="inputEmail4" class="form-label">Email</label>
@@ -96,22 +97,18 @@
             </div>
             <div class="col-md-6 sal">
                 <label for="inputPassword4" class="form-label">Salário</label>
-                <input type="text" class="form-control" id="inputcpf" placeholder="R$ 0,00">
+                <input type="text" class="form-control" id="inputcpf" placeholder="R$ 0,00" onkeypress="return onlynumber();">
             </div>
             <p class="desconto">Bonificação %</p>
             <div class="div-bon">
-                <button type="button" class="btn btn-danger btn-bon">-</button>
-                <input type="text" class="form-control bonificacao" placeholder="0%" id="exampleFormControlInput3">
-                <button type="button" class="btn btn-danger btn-bon">+</button>
+                <input type="text" class="form-control bonificacao" placeholder="0%" id="exampleFormControlInput3" onkeypress="return onlynumber();">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Anotações</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Digita aqui sua anotação" rows="3"></textarea>
             </div>
         </form>
-        <button type="button" class="btn btn-danger btn-manipulacao-dados">Alterar</button>
-        <button type="button" class="btn btn-danger btn-manipulacao-dados">Listar</button>
-        <button type="button" class="btn btn-danger btn-manipulacao-dados">Excluir</button>
+        <button type="button" class="btn btn-danger btn-manipulacao-dados">Cadastrar</button>
         <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
 
     </main>
