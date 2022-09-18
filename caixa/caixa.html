@@ -89,26 +89,14 @@
     </header>
     <main>
         <p class="title">Caixa</p>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Código
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-                Nome
-            </label>
         </div><br>
         <div class="mb-3">
-            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira o código do produto">
+            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira o código do produto" onkeypress="return onlynumber();">
         </div>
         <div class="mb-3 qtd">
             <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
             <input type="qtd" class="form-control" id="exampleFormControlInput1" onkeypress="return onlynumber();">
         </div>
-        <button type="button" class="btn btn-danger btn-lancar">+</button>
         <p class="desconto">Desconto %</p>
         <div>
             <input type="desc" class="form-control desc" id="exampleFormControlInput3" placeholder="0" onkeypress="return onlynumber();"> 
@@ -244,8 +232,10 @@
             <option value="2">Raphael</option>
             <option value="3">Eduardo</option>
         </select>
+        <br>
+        <button type="button" class="btn btn-danger btn-estoque">Finalizar Compra</button>
         </main>
-            
+   
     <footer class="bg-danger text-center text-white">
 
         <div class="container p-4">

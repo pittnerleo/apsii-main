@@ -103,3 +103,16 @@ body {
 .form-floating.error input{
   border: 3px solid #DB5A5A;
 }
+
+.mb-3 span.error{
+  display: flex;
+
+  padding: 0;
+
+  background-color: rgba(255, 0, 0, .2);
+}
+
+.mb-3 span.error.active{
+  border: 1px solid red;
+  padding: 0.4em;
+}

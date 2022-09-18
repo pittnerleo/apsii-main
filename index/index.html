@@ -18,40 +18,35 @@
       <h1 class="h3 mb-3 fw-normal">Fazer login</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com">
+        <input required type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com">
         <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating ">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="senha" onkeypress="return onlynumber();">
+        <input required type="password" class="form-control" id="floatingPassword" placeholder="senha" onkeypress="return onlynumber();">
         <label for="floatingPassword">Senha</label>
       </div>
       <div class="msg"></div>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="lembrardemim"> Lembrar de mim </label>
       </div>
       <a class="w-100 btn btn-lg btn-light" role="button" onclick="logar()">Entrar</a>
     </form>
-  </main>
-  
-  <script>
+    <script>
       
-    function logar(){
+   
+      
+      function logar(){
         var login = document.getElementById('floatingInput').value
         var senha = document.getElementById('floatingPassword').value
         
         if(login == "admin@admin.com" && senha == "12345678"){
-            alert('sucesso');
             window.location.href="/apsii-main/Homepage/homepage.html";
         }else{
             alert('Usuario ou senha invalidos');
         }
      
     }
-    
-    </script>
+      </script>
 
-
+  </main>
 </body>
 
 </html>
