@@ -82,34 +82,33 @@
     <form class="form" id="form">
     <main class="col-11 col-sm col-md-11 col-lg-12 col-xl-10">
         <p class="title">Controle de estoque</p>
-        <div class="metadeTamanho check" >
+        <div class="metadeTamanho" >
             <label for="validationCustomUsername" class="form-label">Nome Produto</label>
             <input type="text" class="form-control metadeTamanho" id="NomeProduto" placeholder="Insira o nome do produto">
-            <small>Error message</small>
+    
         </div>
 
-        <div class="metadeTamanho check">
+        <div class="metadeTamanho">
             <label for="validationCustomUsername" class="form-label">Código de barras do Produto</label>
             <input type="text" class="form-control metadeTamanho" id="CodBarras" placeholder="Código de barras do produto" onkeypress="return onlynumber();">
-            <small>Error message</small>
+    
         </div>
 
-        <div class="mb-3 qtd check" >
+        <div class="mb-3 qtd" >
             <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
-            <input type="number" class="form-control" id="Quantidade" placeholder="0" onkeypress="return onlynumber();">
-            <small>Error message</small>
+            <input type="text" class="form-control" id="Quantidade" placeholder="0" onkeypress="return onlynumber();">
 
         </div>
-        <div class="mb-3 preco check">
+        <div class="mb-3 preco">
             <label for="exampleFormControlInput1" class="form-label">Preço</label>
             <input type="text" class="form-control" id="Valor" placeholder="R$ 0,00" onkeypress="return onlynumber();">
-            <small>Error message</small>
+    
         </div>
 
-        <div class="mb-3 dtvld check" > 
+        <div class="mb-3 dtvld" > 
             <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
             <input type="date" class="form-control" id="DtValidade">
-            <small>Error message</small>
+    
         </div>
         <button type="submit" id="button"  class="btn btn-danger">Cadastrar</button>
         <button id="button1" class="btn btn-danger">Atualizar</button>

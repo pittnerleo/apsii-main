@@ -99,11 +99,11 @@ footer {
 }
 
 .metadeTamanho {
-  width: 75%;
+  width: 75% ;
 }
 
 .errorInput {
-  border: 2px solid red !important;
+  border: red !important;
 }
 
 .check.success input{

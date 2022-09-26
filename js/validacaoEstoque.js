@@ -22,41 +22,54 @@
   
         
     if(NomeProdutoValue === ''){
-        errorValidation(NomeProduto, 'Preencha esse campo')
+        errorValidation(NomeProduto)
     }else{
         successValidation(NomeProduto)
     }
     if(CodBarrasValue === ''){
-        errorValidation(CodBarras, 'Preencha esse campo')
+        errorValidation(CodBarras)
     }else{
         successValidation(CodBarras)
     }
     if(QuantidadeValue === ''){
-        errorValidation(Quantidade, 'Preencha esse campo')
+        errorValidation(Quantidade)
     }else{
         successValidation(Quantidade)
     }
     if(ValorValue === ''){
-        errorValidation(Valor, 'Preencha esse campo')
+        errorValidation(Valor)
     }else{
         successValidation(Valor)
     }
     if(DtValidadeValue === ''){
-        errorValidation(DtValidade, 'Preencha esse campo')
+        errorValidation(DtValidade)
     }else{
         successValidation(DtValidade)
     }
   }
 
-  function errorValidation(input, message){
+  function errorValidation(input){
     const check = input.parentElement;
     const small = check.querySelector('small')
-    
-    small.innerText = message
-    check.className = 'check error'
-  }
+    if(check.className.includes('check success')){
+        check.className= check.className.replace('check success' , '')
+       }
+    if (check.className.includes('check error')){
 
+    }else{
+        check.className  = check.className + ' check error'
+    }
+  }
+ 
   function successValidation(input){
     const check = input.parentElement;
-    check.className = 'check success'
+    if(check.className.includes('check error')){
+      check.className= check.className.replace('check error' , '')
+     }
+    if (check.className.includes('check success')){
+
+    }else{
+        check.className = check.className + ' check success'
+    }
+    
   }
