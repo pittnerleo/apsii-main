@@ -47,20 +47,20 @@
                             <a class="nav-link active" aria-current="page"
                                 href="../../despesas/despesas.html">Despesas</a>
                                 
-                          <li class="nav-item dropdown">
+                                <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle active" href="#" id="dropdown05"
                                       data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
                                   <ul class="dropdown-menu" aria-labelledby="dropdown05">
                                       <li><a class="dropdown-item"
                                               href="../Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                                      <li><a class="dropdown-item" href="../Cadastro/Clientes/clientes.html">Clientes</a></li>
+                                      <li><a class="dropdown-item" href="../Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
                                   </ul>
                                   <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
                                         aria-expanded="false">Consulta</a>
                                       <ul class="dropdown-menu" aria-labelledby="dropdown05">
                                         <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaFunc.html">Funcionarios</a></li>
-                                        <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaCliente.html">Clientes</a></li>
+                                        <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaForncedores.html">Fornecedores</a></li>
                                       </ul>
                               <li class="nav-item" id="sair">
                                   <a class="nav-link active" aria-current="page" href="../index/index.html"><svg
@@ -79,15 +79,15 @@
 
     </header>
     <main>
-        <p class="title">Cadastro de clientes</p>
+        <p class="title">Cadastro de Fornecedores</p>
         <form class="row g-3">
             <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Digite o nome para cadastro">
+                <label for="inputEmail4" class="form-label">Nome do fornecedor</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Digite o nome do fornecedor para cadastro">
             </div>
-            <div class="col-md-6 cpf">
-                <label for="inputPassword4" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="inputcpf" placeholder="XXX.XXX.XXX-XX" onkeypress="return onlynumber();">
+            <div class="col-md-6 cnpj">
+                <label for="inputPassword4" class="form-label">CNPJ</label>
+                <input type="text" class="form-control" id="inputCNPJ" placeholder="XX.XXX.XXX/0001-XX." onkeypress="return onlynumber();">
             </div>
             <div class="col-12 end">
                 <label for="inputAddress" class="form-label">Endereço</label>
@@ -101,6 +101,7 @@
                 <label for="inputEmail4" class="form-label">Telefone</label>
                 <input type="text" class="form-control" id="inputEmail4" placeholder="(DDD) XXXXX-XXXX" onkeypress="return onlynumber();">
             </div>
+            
             <button type="button" class="btn btn-danger btn-inserir">Inserir </button>
             
             </form>

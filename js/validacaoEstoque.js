@@ -1,75 +1,95 @@
-    const form = document.getElementById('form')
-    const NomeProduto = document.getElementById('NomeProduto')
-    const CodBarras = document.getElementById('CodBarras')
-    const Quantidade = document.getElementById('Quantidade')
-    const Valor = document.getElementById('Valor')
-    const DtValidade= document.getElementById('DtValidade')
+const form = document.querySelector('form');
 
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault()
-
-        checkInputs()
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let form  = document.querySelector('form');
+    let estoque = getEstoque(form);
+    let erros = validaEstoque(estoque);
+    if(erros.length > 0) {
+        exibeMensagemDeErro(erros);
+        return;
+    }
     
-    })
+});
 
-  function checkInputs(){
-    const NomeProdutoValue = NomeProduto.value.trim()
-    const CodBarrasValue = CodBarras.value.trim()
-    const QuantidadeValue = Quantidade.value.trim()
-    const ValorValue = Valor.value.trim()
-    const DtValidadeValue = DtValidade.value.trim()
-  
+function validaEstoque(estoque) {
+    let erros = [];
+    let codBarras = document.querySelector("#codBarras");
+    let descricao = document.querySelector("#descricao");
+    let quantidade = document.querySelector("#quantidade");
+    let preco = document.querySelector("#preco");
+    let dtValidade = document.querySelector("#dtValidade");
+    if(estoque.codBarras.length == 0) {
+        erros.push("Código inválido");
+        codBarras.classList.add('errorInput');
+    } else {
+        codBarras.classList.add('successInput');
+    } 
         
-    if(NomeProdutoValue === ''){
-        errorValidation(NomeProduto)
-    }else{
-        successValidation(NomeProduto)
+    if(estoque.descricao.length == 0) {
+        erros.push("Descrição inválida");
+        descricao.classList.add('errorInput');
+    } else {
+        descricao.classList.add('successInput');
     }
-    if(CodBarrasValue === ''){
-        errorValidation(CodBarras)
-    }else{
-        successValidation(CodBarras)
-    }
-    if(QuantidadeValue === ''){
-        errorValidation(Quantidade)
-    }else{
-        successValidation(Quantidade)
-    }
-    if(ValorValue === ''){
-        errorValidation(Valor)
-    }else{
-        successValidation(Valor)
-    }
-    if(DtValidadeValue === ''){
-        errorValidation(DtValidade)
-    }else{
-        successValidation(DtValidade)
-    }
-  }
 
-  function errorValidation(input){
-    const check = input.parentElement;
-    const small = check.querySelector('small')
-    if(check.className.includes('check success')){
-        check.className= check.className.replace('check success' , '')
-       }
-    if (check.className.includes('check error')){
-
-    }else{
-        check.className  = check.className + ' check error'
+    if(estoque.quantidade.length == 0){
+        erros.push("Quantidade inválida");
+        quantidade.classList.add('errorInput');
+    } else {
+        quantidade.classList.add('successInput');
     }
-  }
- 
-  function successValidation(input){
-    const check = input.parentElement;
-    if(check.className.includes('check error')){
-      check.className= check.className.replace('check error' , '')
-     }
-    if (check.className.includes('check success')){
 
-    }else{
-        check.className = check.className + ' check success'
+    if(estoque.preco.length == 0){
+        erros.push("Preço inválido");
+        preco.classList.add('errorInput');
+    } else {
+        preco.classList.add('successInput');
     }
-    
-  }
+
+    if(estoque.dtValidade.length == 0){
+        erros.push("Data inválida");
+        dtValidade.classList.add('errorInput');
+
+    } else {
+        dtValidade.classList.add('successInput');
+    } 
+
+    return erros;
+}
+
+function getEstoque(form) {
+    console.log(form.codBarras.value);
+    var estoque = {
+        codBarras: form.codBarras.value,
+        descricao: form.descricao.value,
+        quantidade: form.quantidade.value,
+        preco: form.preco.value,
+        dtValidade: form.dtValidade.value
+    }
+
+    return estoque;
+}
+
+function exibeMensagemDeErro(erros){
+    let ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+    erros.forEach((erro) => {
+        let liErro = document.createElement("li");
+        liErro.textContent = erro;
+        ul.appendChild(liErro);
+    })
+}
+
+function onlynumber(evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    var regex = /^[0-9.\b]+$/;
+    if( !regex.test(key) ) {
+       theEvent.returnValue = false;
+       if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+ }
+
+

@@ -125,3 +125,15 @@ footer {
   font-size: 14px;
   color: red;
 }
+
+.errorInput {
+  border: solid 2px red !important;
+}
+
+.successInput {
+  border: solid 2px green !important;
+}
+#mensagens-erro {
+	color: #f00;
+	font-weight: bold;
+}

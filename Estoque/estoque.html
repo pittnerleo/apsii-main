@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Supermercado Muffatinho</title>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="/apsii-main/js/funcgenericas.js"></script>
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -17,7 +16,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger" aria-label="Fifth navbar example">
             <div class="container-fluid">
                 <div class="div-logo">
-                    <img src="../index/img/muffatinho.png" alt="mdo" width="115" height="75" class="rounded float-start">
+                    <img src="../index/img/muffatinho.png" alt="mdo" width="115" height="75"
+                        class="rounded float-start">
                     </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -54,14 +54,14 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdown05">
                                 <li><a class="dropdown-item"
                                         href="../Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                                <li><a class="dropdown-item" href="../Cadastro/Clientes/clientes.html">Clientes</a></li>
+                                <li><a class="dropdown-item" href="../Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
                             </ul>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
                                   aria-expanded="false">Consulta</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
                                   <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaFunc.html">Funcionarios</a></li>
-                                  <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaCliente.html">Clientes</a></li>
+                                  <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaForncedores.html">Fornecedores</a></li>
                                 </ul>
                         <li class="nav-item" id="sair">
                             <a class="nav-link active" aria-current="page" href="../index/index.html"><svg
@@ -79,54 +79,61 @@
         </nav>
 
     </header>
-    <form class="form" id="form">
-    <main class="col-11 col-sm col-md-11 col-lg-12 col-xl-10">
+    <main>
         <p class="title">Controle de estoque</p>
-        <div class="metadeTamanho" >
-            <label for="validationCustomUsername" class="form-label">Nome Produto</label>
-            <input type="text" class="form-control metadeTamanho" id="NomeProduto" placeholder="Insira o nome do produto">
-    
-        </div>
+        <ul id="mensagens-erro"></ul>
+        <form action="">
+            <div class="mb-3">
+                <label for="validationCustomUsername" class="form-label">Código de barras</label>
+                <input type="descricao" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" onkeypress="return onlynumber();">
+            </div>
+            <div class="mb-3">
+                <label for="validationCustomUsername" class="form-label">Descrição</label>
+                <input type="descricao" class="form-control" id="descricao"
+                    placeholder="Insira a descrição do produto">
 
-        <div class="metadeTamanho">
-            <label for="validationCustomUsername" class="form-label">Código de barras do Produto</label>
-            <input type="text" class="form-control metadeTamanho" id="CodBarras" placeholder="Código de barras do produto" onkeypress="return onlynumber();">
-    
-        </div>
-
-        <div class="mb-3 qtd" >
-            <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
-            <input type="text" class="form-control" id="Quantidade" placeholder="0" onkeypress="return onlynumber();">
-
-        </div>
-        <div class="mb-3 preco">
-            <label for="exampleFormControlInput1" class="form-label">Preço</label>
-            <input type="text" class="form-control" id="Valor" placeholder="R$ 0,00" onkeypress="return onlynumber();">
-    
-        </div>
-
-        <div class="mb-3 dtvld" > 
-            <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
-            <input type="date" class="form-control" id="DtValidade">
-    
-        </div>
-        <button type="submit" id="button"  class="btn btn-danger">Cadastrar</button>
-        <button id="button1" class="btn btn-danger">Atualizar</button>
-        <button id="button2" class="btn btn-danger">Excluir</button>
-    </form>
-    
-
+            </div>
+            <div class="mb-3 qtd">
+                <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
+                <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+            </div>
+            <div class="mb-3 preco">
+                <label for="exampleFormControlInput1" class="form-label">Preço</label>
+                <input type="qtd" class="form-control" id="preco" placeholder="R$ 0,00" onkeypress="return onlynumber();">
+                
+            </div>
+            <div class="mb-3 dtvld">
+                <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
+                <input type="date" class="form-control" id="dtValidade">
+                
+            </div>
+            <div class="mb-3 dtvld">
+                <label for="exampleFormControlInput1" class="form-label">Categoria</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1">Alimentos</option>
+                        <option value="2">Higiene</option>
+                        <option value="2">Brinquedos</option>
+                      </select>
+              </div><br>
+            <input type="submit" class="btn btn-danger btn-estoque" id="btnCadastra" value="Cadastrar"></input>
+            <input type="submit" class="btn btn-danger btn-estoque" id="btnAtualiza" value="Atualizar"></input>
+            <input type="submit" class="btn btn-danger btn-estoque" id="btnExclui" value="Excluir"></input>
+        </form>
         <div class="table-responsive">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Cod.Barras</th>
+                        <th scope="col">Cód.Barras</th>
+                        <th scope="col">Descrição</th>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Preço</th>
+                        <th scope="col">Data</th>
                     </tr>
                 </thead>
-                <tbody id="tbody" >
+                <tbody>
                     <tr>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -134,18 +141,6 @@
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -153,27 +148,18 @@
                     <tr>
                         <td colspan="2"></td>
                         <td></td>
-                    </tr>
+                        <td></td>
+                        <td></td>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -181,27 +167,18 @@
                     <tr>
                         <td colspan="2"></td>
                         <td></td>
-                    </tr>
+                        <td></td>
+                        <td></td>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -209,27 +186,18 @@
                     <tr>
                         <td colspan="2"></td>
                         <td></td>
-                    </tr>
+                        <td></td>
+                        <td></td>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -237,12 +205,107 @@
                     <tr>
                         <td colspan="2"></td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                 </tbody>
             </table>
         </div>
         <button type="button" class="btn btn-danger">Gerar relatório</button>
-        <button onclick="produto.excluir" type="button" class="btn btn-danger">Consultar Estoque</button>
 
     </main>
     <footer class="bg-danger text-center text-white">
@@ -291,8 +354,11 @@
             </div>
     </footer>
 
-    <script src="/apsii-main/js/validacaoEstoque.js"></script>
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/validacaoEstoque.js"></script>
+
+
 
 </body>
 
