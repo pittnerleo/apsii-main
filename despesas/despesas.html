@@ -47,12 +47,11 @@
                             <a class="nav-link active" aria-current="page" href="despesas.html">Despesas</a>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle active" href="#" id="dropdown05"
-                              data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
+                          <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
+                            aria-expanded="false">Consulta</a>
                           <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                              <li><a class="dropdown-item"
-                                      href="../Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                              <li><a class="dropdown-item" href="../Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
+                            <li><a class="dropdown-item" href="/apsii-main/Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
+                            <li><a class="dropdown-item" href="/apsii-main/Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
                           </ul>
                           <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
@@ -79,37 +78,35 @@
     </header>
     <main>
         <p class="title">Controle de despesas</p>
-      
-        <div class="mb-3">
-            <label for="validationCustomUsername" class="form-label">Administrativas: </label>
+        <div class="mb-3 categoria">
+          <label for="exampleFormControlInput1" class="form-label">Tipo despesa</label>
+              <select class="form-select" aria-label="Default select example">
+                  <option value="1">Administrativas</option>
+                  <option value="2">Físicas</option>
+                </select>
+        </div>
+        <div class="mb-3 metadeTamanho">
+          <label for="exampleFormControlInput1" class="form-label">Descrição do produto</label>
+          <input type="descricao" class="form-control" id="descricao" placeholder="Insira a descrição do produto" >
+      </div>
+<br>
+              <div class="mb-3 " >
+               <label for="validationCustomUsername" class="form-label">Receita:</label>
+              <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
+                </div>
+        <div class="mb-3 valor1">
+            <label for="validationCustomUsername" class="form-label">Valor despesa: </label>
             <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
-        <div class="mb-3 fis" >
-            <label for="validationCustomUsername" class="form-label">Físicas:</label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
-        </div>
-        <div class="mb-3 " >
-            <label for="validationCustomUsername" class="form-label">Receita:</label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
-        </div>
+
         <div class="mb-3 " >
             <label for="validationCustomUsername" class="form-label">Custo Total:</label>
             <input class="form-control" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
+        <br>
         <button type="button" class="btn btn-danger btn-lucro">Calcular lucro:</button>
         <input class="form-control lucro" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
-        <p class="fornecedor">Tipo despesa:</p>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Selecione</option>
-            <option value="1">Administrativas</option>
-            <option value="2">Física</option>
-          </select>
-        <div class="col-md-6">
-          <label class="form-label">Descrição da despesa</label>
-          <input type="text" class="form-control" placeholder="Digite o nome do fornecedor para cadastro">
-      </div>
-    
     </main>
     <footer class="bg-danger text-center text-white">
 

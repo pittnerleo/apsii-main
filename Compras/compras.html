@@ -47,12 +47,11 @@
                             <a class="nav-link active" aria-current="page" href="../despesas/despesas.html">Despesas</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="dropdown05"
-                                data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
+                            <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
+                              aria-expanded="false">Consulta</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item"
-                                        href="../Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                                <li><a class="dropdown-item" href="../Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
+                              <li><a class="dropdown-item" href="/apsii-main/Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
+                              <li><a class="dropdown-item" href="/apsii-main/Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
                             </ul>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
@@ -87,14 +86,24 @@
             <label for="validationCustomUsername" class="form-label">Quantidade</label>
             <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="0" onkeypress="return onlynumber();">
         </div>
-        <p class="fornecedor">Fornecedor:</p>
+        <div class="mb-3 valor">
+            <label for="exampleFormControlInput1" class="form-label">Valor</label>
+            <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+        </div>
+        <div class="mb-3 dtvld">
+            <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
+            <input type="date" class="form-control" id="dtValidade">
+            
+        </div>
+        <div class="mb-3 fornecedor">
+        <label for="exampleFormControlInput1" class="form-label">Fornecedor</label>
         <select class="form-select" aria-label="Default select example">
-            <option selected>Selecione</option>
-            <option value="1">Caique</option>
-            <option value="2">Raphael</option>
-            <option value="3">Eduardo</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
-          <button type="button" class="btn btn-danger btn-cadastrar">Cadastrar</button>
+          </div>
+       
           <p class="pedido">Pedido:</p> 
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -107,14 +116,9 @@
             <label class="form-check-label" for="flexRadioDefault2">
                 Em aberto
             </label> 
-        </div> <br>
-        <p class="fornecedor2">Fornecedor:</p>
-        <select class="form-select fornecedor-consultar" aria-label="Default select example">
-            <option selected>Selecione</option>
-            <option value="1">Caique</option>
-            <option value="2">Raphael</option>
-            <option value="3">Eduardo</option>
-          </select>
+        </div>
+    <br>
+          <button type="button" class="btn btn-danger btn-cadastrar">Cadastrar</button>
           <button type="button" class="btn btn-danger btn-consultar">Consultar</button>
           <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
           <table class="table table-striped">

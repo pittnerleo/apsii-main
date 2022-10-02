@@ -146,3 +146,19 @@
 footer {
   margin-top: 120px;
 }
+
+.dtvld {
+  display: inline-block;
+  width: 200px;
+}
+
+.desconto {
+  display: inline-block;
+  width: 150px;
+  margin-right: 40px;
+
+}
+
+.metadeTamanho {
+  width: 50% ;
+}

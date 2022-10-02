@@ -88,7 +88,7 @@
 }
 
 .fornecedor {
-    display: inline-block;
+    display:inline-table;
     width: 100px;
     margin-left: 20px;
 }
@@ -122,11 +122,23 @@
     display: inline-block;
 }
 
-.fornecedor2 {
+.fornecedor {
     display: inline-block;
+    width: 200px;
 }
 
 footer {
     margin-top: 120px;
   }
 
+  .valor {
+    display: inline-block;
+    width: 150px;
+    margin-right: 40px;
+
+}
+
+.dtvld {
+    display: inline-block;
+    width: 200px;
+}

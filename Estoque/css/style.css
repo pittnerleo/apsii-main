@@ -85,6 +85,10 @@ main {
     display: inline-block;
     width: 200px;
 }
+.categoria {
+  display: inline-block;
+  width: 200px;
+}
 
 .btn-estoque {
     margin-bottom: 4px;

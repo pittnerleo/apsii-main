@@ -54,14 +54,12 @@
                                         href="../despesas/despesas.html">Despesas</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle active" href="#" id="dropdown05"
-                                        data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
+                                    <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
+                                      aria-expanded="false">Consulta</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                        <li><a class="dropdown-item"
-                                                href="../Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                                        <li><a class="dropdown-item" href="../Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
-                                    </ul>
-                                    <li class="nav-item dropdown">
+                                      <li><a class="dropdown-item" href="/apsii-main/Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
+                                      <li><a class="dropdown-item" href="/apsii-main/Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
+                                    </ul>="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
                                           aria-expanded="false">Consulta</a>
                                         <ul class="dropdown-menu" aria-labelledby="dropdown05">
@@ -89,16 +87,21 @@
     <main>
         <p class="title">Caixa</p>
         </div><br>
-        <div class="mb-3">
-            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira o código do produto" onkeypress="return onlynumber();">
+        <div class="mb-3 metadeTamanho">
+            <label for="exampleFormControlInput1" class="form-label">Cod.barras</label>
+            <input type="descricao" class="form-control" id="descricao" placeholder="Insira o código do produto" onkeypress="return onlynumber();">
         </div>
         <div class="mb-3 qtd">
             <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
-            <input type="qtd" class="form-control" id="exampleFormControlInput1" onkeypress="return onlynumber();">
+            <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
         </div>
-        <p class="desconto">Desconto %</p>
-        <div>
-            <input type="desc" class="form-control desc" id="exampleFormControlInput3" placeholder="0" onkeypress="return onlynumber();"> 
+        <div class="mb-3 desconto">
+            <label for="exampleFormControlInput1" class="form-label">Desconto %</label>
+            <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+        </div>
+        <div class="mb-3 dtvld">
+            <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
+            <input type="date" class="form-control" id="dtValidade">
         </div>
         <table class="table table-striped">
             <thead>
@@ -227,9 +230,9 @@
         <p class="caixa">Operador do Caixa:</p>
         <select class="form-select" aria-label="Default select example">
             <option selected>Selecione</option>
-            <option value="1">Caique</option>
-            <option value="2">Raphael</option>
-            <option value="3">Eduardo</option>
+            <option value="1">Operador 1</option>
+            <option value="2">Operador 2</option>
+            <option value="3">Operador 3</option>
         </select>
         <br>
         <button type="button" class="btn btn-danger btn-estoque">Finalizar Compra</button>

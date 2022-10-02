@@ -54,12 +54,11 @@
                                         href="../despesas/despesas.html">Despesas</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle active" href="#" id="dropdown05"
-                                        data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
+                                    <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
+                                      aria-expanded="false">Consulta</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                        <li><a class="dropdown-item"
-                                                href="../Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                                        <li><a class="dropdown-item" href="../Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
+                                      <li><a class="dropdown-item" href="/apsii-main/Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
+                                      <li><a class="dropdown-item" href="/apsii-main/Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
                                     </ul>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
@@ -87,11 +86,28 @@
     </header>
     <main>
         <p class="title">Controle de vendas</p>
-        <div class="mb-3">
+        <div class="mb-3 metadeTamanho">
             <label for="validationCustomUsername" class="form-label">Cód.Barras</label>
-            <input required type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira o código de barras do produto" onkeypress="return onlynumber();">
+            <input type="descricao" class="form-control" id="exampleFormControlInput1" placeholder="Insira o código de barras do produto" onkeypress="return onlynumber();">
             <span class="error active"></span>
         </div>
+        <div class="mb-3 qtd">
+            <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
+            <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+        </div>
+        <div class="mb-3 valor">
+            <label for="exampleFormControlInput1" class="form-label">Valor</label>
+            <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+        </div>
+        <div class="mb-3 dtvld">
+            <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
+            <input type="date" class="form-control" id="dtValidade">
+        </div>
+        <div class="mb-3 desconto">
+            <label for="exampleFormControlInput1" class="form-label">Desconto %</label>
+            <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+        </div>
+       
         <button type="button" class="btn btn-danger btn-estoque">Buscar</button>
         <button type="button" class="btn btn-danger btn-estoque">Excluir</button>
         <div class="table-responsive">

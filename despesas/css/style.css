@@ -116,4 +116,11 @@ footer {
     margin-top: 500px;
   }
 
+.despesa {
+    display: inline-block;
+    width: 200px;
+  }
 
+  .metadeTamanho {
+    width: 50% ;
+  }

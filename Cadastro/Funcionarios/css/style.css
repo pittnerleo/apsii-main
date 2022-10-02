@@ -92,10 +92,6 @@
     width: 200px;
 }
 
-.tel {
-    width: 200px;
-}
-
 .email {
     display: inline-block;
 }
@@ -146,3 +142,11 @@
 footer {
     margin-top: 120px;
   }
+
+  .carga {
+    width: 200px;
+}
+
+.escala {
+    width: 200px;
+}
