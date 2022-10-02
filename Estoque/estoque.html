@@ -7,8 +7,8 @@
     <title>Supermercado Muffatinho</title>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-</head>
 
+</head>
 <body>
 
     <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -84,7 +84,35 @@
         <form action="">
             <div class="mb-3">
                 <label for="validationCustomUsername" class="form-label">Código de barras</label>
-                <input type="descricao" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" onkeypress="return onlynumber();">
+                <input type="descricao" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" list="historico" onkeypress="return onlynumber();">
+<script>
+                    function executar(){
+    var codBarras = document.getElementById('codBarras').value;
+    var lista = document.getElementById('historico');
+    var adicionar = true;
+    
+    var opt = document.createElement('option');
+
+
+    for (i = 0; i < lista.options.length; i ++ ){
+        if(codBarras== lista.options[i].value){
+            adicionar=false;
+        }
+    }
+
+    if(adicionar == true){
+        opt.value = codBarras;
+        lista.appendChild(opt);
+    }
+}
+</script>
+
+            <datalist id="historico">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </datalist>
             </div>
             <div class="mb-3">
                 <label for="validationCustomUsername" class="form-label">Descrição</label>
@@ -112,7 +140,7 @@
                         <option value="2">Brinquedos</option>
                       </select>
               </div><br>
-            <input type="submit" class="btn btn-danger btn-estoque" id="btnCadastra" value="Cadastrar"></input>
+            <input type="submit" class="btn btn-danger btn-estoque" id="btnCadastra" onclick="executar()" value="Cadastrar"></input>
             <input type="submit" class="btn btn-danger btn-estoque" id="btnAtualiza" value="Atualizar"></input>
             <input type="submit" class="btn btn-danger btn-estoque" id="btnExclui" value="Excluir"></input>
         </form>
@@ -354,7 +382,6 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/validacaoEstoque.js"></script>
-
 
 
 </body>
