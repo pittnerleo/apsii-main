@@ -17,7 +17,6 @@ function validaDespesas(despesas) {
     let descricao = document.querySelector("#descricao");
     let receita = document.querySelector("#receita");
     let valorDespesa = document.querySelector("#valorDespesa");
-    let custoTotal = document.querySelector("#custoTotal");
     if(despesas.receita.length == 0) {
         erros.push("Receita inválida");
         receita.classList.add('errorInput');
@@ -39,12 +38,6 @@ function validaDespesas(despesas) {
         valorDespesa.classList.add('successInput');
     }
 
-    if(despesas.custoTotal.length == 0){
-        erros.push("Custo inválido");
-        custoTotal.classList.add('errorInput');
-    } else {
-        custoTotal.classList.add('successInput');
-    }
     return erros;
 }
 
@@ -54,7 +47,7 @@ function getDespesas(form) {
         descricao: form.descricao.value,
         receita: form.receita.value,
         valorDespesa: form.valorDespesa.value,
-        custoTotal: form.custoTotal.value,
+
     }
 
     return despesas;
