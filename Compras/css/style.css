@@ -131,7 +131,7 @@ footer {
     margin-top: 120px;
   }
 
-  .valor {
+  .preco {
     display: inline-block;
     width: 150px;
     margin-right: 40px;
@@ -142,3 +142,39 @@ footer {
     display: inline-block;
     width: 200px;
 }
+
+.errorInput {
+    border: red !important;
+  }
+  
+  .check.success input{
+    border: 3px solid greenyellow;
+  }
+  
+  .check.error input{
+    border: 3px solid red;
+  }
+  
+  .check.error small{
+    visibility: visible;
+  }
+  
+  .check small {
+    visibility: hidden;
+    position: absolute;
+    margin-top: 5px;
+    font-size: 14px;
+    color: red;
+  }
+  
+  .errorInput {
+    border: solid 2px red !important;
+  }
+  
+  .successInput {
+    border: solid 2px green !important;
+  }
+  #mensagens-erro {
+      color: #f00;
+      font-weight: bold;
+  }
