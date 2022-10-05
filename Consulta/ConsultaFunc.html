@@ -87,7 +87,7 @@
             <input type="codBarras" class="form-control metadeTamanho" id="CPF" placeholder="Código de identificação" onkeypress="return onlynumber();">
         </div>
         <br>
-        <input type="submit" class="btn btn-danger" id="btnConsulta" onclick="executar()" value="Consultar"></input>
+        <input type="submit" class="btn btn-danger" id="btnConsulta"  value="Consultar"></input>
         <button onclick="produto.atualizar" type="button" class="btn btn-danger">Atualizar</button>
         <button onclick="produto.excluir" type="button" class="btn btn-danger">Excluir</button>
         <button type="button" class="btn btn-danger">Gerar relatório</button>
@@ -270,27 +270,6 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoConsultaFunc.js"></script>
-    <script>
-        function executar(){
-var CPF = document.getElementById('CPF').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
-
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(CPF== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = CPF;
-lista.appendChild(opt);
-}
-}
-</script>
 
 </body>
 

@@ -101,7 +101,7 @@
             <div class="col-md-6 cargo">
                 <p class="cargo">Cargo:</p>
                 <select class="form-select cargo-select" aria-label="Default select example">
-                    <option selected>Selecione</option>
+                  <option value="0" disabled selected>Selecionar</option>
                     <option value="1">Caixa</option>
                     <option value="2">Gerente</option>
                     <option value="3">Estoquista</option>
@@ -163,26 +163,6 @@
       </footer>
     <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoFuncionarios.js"></script>
-    <script>
-      function executar(){
-var nomeFunc = document.getElementById('nomeFunc').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
 
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(nomeFunc== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = nomeFunc;
-lista.appendChild(opt);
-}
-}
-</script>
   </body>
   </html>

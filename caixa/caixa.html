@@ -99,7 +99,7 @@
             <input type="date" class="form-control" id="dtValidade">
         </div>
         <br>
-        <input type="submit" class="btn btn-danger " id="btnFinaliza" onclick="executar()" value="Finalizar compra"></input>
+        <input type="submit" class="btn btn-danger " id="btnFinaliza" value="Finalizar compra"></input>
         </form>
 
         <table class="table table-striped">
@@ -282,27 +282,6 @@
     </footer>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoCaixa.js"></script>
-    <script>
-        function executar(){
-var codBarras = document.getElementById('codBarras').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
-
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(codBarras== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = codBarras;
-lista.appendChild(opt);
-}
-}
-</script>
 </body>
 
 </html>

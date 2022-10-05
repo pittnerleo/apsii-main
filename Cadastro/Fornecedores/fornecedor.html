@@ -105,7 +105,7 @@
                 <input type="text" class="form-control" id="telefone" placeholder="(DDD) XXXXX-XXXX" onkeypress="return onlynumber();">
             </div>
             
-            <input type="submit" class="btn btn-danger" id="btnCadastra" onclick="executar()" value="Cadastrar"></input>
+            <input type="submit" class="btn btn-danger" id="btnCadastra" value="Cadastrar"></input>
           </form>
     </main>
     <footer class="bg-danger text-center text-white">
@@ -153,26 +153,5 @@
       </footer>
     <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoFornecedor.js"></script>
-    <script>
-      function executar(){
-var nomeFornecedor = document.getElementById('nomeFornecedor').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
-
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(nomeFornecedor== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = nomeFornecedor;
-lista.appendChild(opt);
-}
-}
-</script>
 </body>
 </html>

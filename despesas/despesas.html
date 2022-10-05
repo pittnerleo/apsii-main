@@ -109,7 +109,7 @@
             <input class="form-control" id="custoTotal" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         </div>
         <br>
-        <input type="submit" class="btn btn-danger" id="btnCalcula" onclick="executar()" value="Calcular lucro"></input>
+        <input type="submit" class="btn btn-danger" id="btnCalcula" value="Calcular lucro"></input>
 
         <input class="form-control lucro" id="exampleFormControlInput1" placeholder="R$ 0,00" onkeypress="return onlynumber();">
         <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
@@ -160,26 +160,6 @@
       </footer>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoDespesas.js"></script>
-    <script>
-      function executar(){
-var descricao = document.getElementById('descricao').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
 
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(descricao== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = descricao;
-lista.appendChild(opt);
-}
-}
-</script>
 </body>
 </html>

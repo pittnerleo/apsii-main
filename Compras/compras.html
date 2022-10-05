@@ -103,6 +103,7 @@
         <div class="mb-3 fornecedor">
         <label for="exampleFormControlInput1" class="form-label">Fornecedor</label>
         <select class="form-select" aria-label="Default select example">
+            <option value="0" disabled selected>Selecionar</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -123,7 +124,7 @@
             </label> 
         </div>
     <br>
-    <input type="submit" class="btn btn-danger " id="btnCadastra" onclick="executar()" value="Cadastrar"></input>
+    <input type="submit" class="btn btn-danger " id="btnCadastra" value="Cadastrar"></input>
           <button type="button" class="btn btn-danger btn-consultar">Consultar</button>
           <button type="button" class="btn btn-danger btn-relatorio">Gerar relatório</button>
           </form>
@@ -291,27 +292,6 @@
       </footer>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoCompras.js"></script>
-    <script>
-        function executar(){
-var codBarras = document.getElementById('codBarras').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
-
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(codBarras== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = codBarras;
-lista.appendChild(opt);
-}
-}
-</script>
 
     </body>
 </html>

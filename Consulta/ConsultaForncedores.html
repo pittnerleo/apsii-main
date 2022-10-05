@@ -95,7 +95,7 @@
             <input  class="form-control metadeTamanho" id="email" placeholder="E-mail cadastrado">
         </div>
         <br>
-        <input type="submit" class="btn btn-danger btn-estoque" id="btnCadastra" onclick="executar()" value="Cadastrar"></input>
+        <input type="submit" class="btn btn-danger btn-estoque" id="btnCadastra" value="Cadastrar"></input>
         <button onclick="produto.atualizar" type="button" class="btn btn-danger">Atualizar</button>
         <button onclick="produto.excluir" type="button" class="btn btn-danger">Excluir</button>
         <button type="button" class="btn btn-danger">Gerar relatório</button>
@@ -278,27 +278,6 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/js/validacaoConsultaForn.js"></script>
-    <script>
-        function executar(){
-var nomeForn = document.getElementById('nomeForn').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
-
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(nomeForn== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = nomeForn;
-lista.appendChild(opt);
-}
-}
-</script>
 
 </body>
 
