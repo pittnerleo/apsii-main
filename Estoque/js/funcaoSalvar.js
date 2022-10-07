@@ -1,5 +1,5 @@
 
-        function executar(){
+function executar(){
 var codBarras = document.getElementById('codBarras').value;
 var lista = document.getElementById('historico');
 var adicionar = true;
