@@ -19,6 +19,9 @@ function validaEstoque(estoque) {
     let quantidade = document.querySelector("#quantidade");
     let preco = document.querySelector("#preco");
     let dtValidade = document.querySelector("#dtValidade");
+    var categoriaI = document.querySelector("#categoria");
+    var categoria =  document.querySelector("#categoria").options[categoriaI.selectedIndex].text; 
+    console.log(categoria);
     if(estoque.codBarras.length == 0) {
         erros.push("Código inválido");
         codBarras.classList.add('errorInput');
@@ -55,6 +58,13 @@ function validaEstoque(estoque) {
         dtValidade.classList.add('successInput');
     } 
 
+    if(estoque.categoria == "Selecionar") {
+        erros.push("Categoria inválida");
+        categoria.classList.add('errorInput');
+    } else {
+        categoria.classList.add('successInput');
+    } 
+
     return erros;
 }
 
@@ -65,7 +75,8 @@ function getEstoque(form) {
         descricao: form.descricao.value,
         quantidade: form.quantidade.value,
         preco: form.preco.value,
-        dtValidade: form.dtValidade.value
+        dtValidade: form.dtValidade.value,
+        categoria: form.categoria.value
     }
 
     return estoque;

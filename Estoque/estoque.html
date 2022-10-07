@@ -10,7 +10,7 @@
 
 </head>
 
-<body onload="carregarTabela()">
+<body>
 
     <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
   
@@ -30,41 +30,41 @@
               <div class="collapse navbar-collapse" id="navbarsExample05">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/apsii-main/Homepage/homepage.html">
+                          <a class="nav-link active" aria-current="page" href="/Homepage/homepage.html">
                               Página
                               Inicial</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/apsii-main/Estoque/estoque.html">Estoque</a>
+                        <a class="nav-link active" aria-current="page" href="/Estoque/estoque.html">Estoque</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/apsii-main/Vendas/vendas.html">Vendas</a>
+                          <a class="nav-link active" aria-current="page" href="/Vendas/vendas.html">Vendas</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/apsii-main/caixa/caixa.html">Caixa</a>
+                          <a class="nav-link active" aria-current="page" href="/caixa/caixa.html">Caixa</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/apsii-main/Compras/compras.html">Compras</a>
+                          <a class="nav-link active" aria-current="page" href="/Compras/compras.html">Compras</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/apsii-main/despesas/despesas.html">Despesas</a>
+                          <a class="nav-link active" aria-current="page" href="/despesas/despesas.html">Despesas</a>
                       </li>
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
                             aria-expanded="false">Cadastro</a>
                           <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                            <li><a class="dropdown-item" href="/apsii-main/Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
-                            <li><a class="dropdown-item" href="/apsii-main/Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
+                            <li><a class="dropdown-item" href="/Cadastro/Funcionarios/funcionarios.html">Funcionarios</a></li>
+                            <li><a class="dropdown-item" href="/Cadastro/Fornecedores/fornecedor.html">Fornecedores</a></li>
                           </ul>
                           <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown"
                                 aria-expanded="false">Consulta</a>
                               <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaFunc.html">Funcionarios</a></li>
-                                <li><a class="dropdown-item" href="/apsii-main/Consulta/ConsultaForncedores.html">Fornecedores</a></li>
+                                <li><a class="dropdown-item" href="/Consulta/ConsultaFunc.html">Funcionarios</a></li>
+                                <li><a class="dropdown-item" href="/Consulta/ConsultaForncedores.html">Fornecedores</a></li>
                               </ul>
                       <li class="nav-item" id="sair">
-                        <a class="nav-link active" aria-current="page" href="/apsii-main/index/index.html"><svg
+                        <a class="nav-link active" aria-current="page" href="/index/index.html"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                   class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
                                   <path fill-rule="evenodd"
@@ -83,10 +83,10 @@
         <main>
         <p class="title">Controle de estoque</p>
         <ul id="mensagens-erro"></ul>
-        <form>
+        <form data-form>
             <div class="mb-3">
                 <label for="validationCustomUsername" class="form-label">Código de barras</label>
-                <input type="descricao" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" list="historico" onkeypress="return onlynumber();">
+                <input type="descricao" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" list="historico" onkeypress="return onlynumber();" data-codBarras>
 
             <datalist id="historico">
                 <option value=""></option>
@@ -98,24 +98,24 @@
             <div class="mb-3">
                 <label for="validationCustomUsername" class="form-label">Descrição</label>
                 <input type="descricao" class="form-control" id="descricao"
-                    placeholder="Insira a descrição do produto">
+                    placeholder="Insira a descrição do produto" data-descricao_produto>
             </div>
             <div class="mb-3 qtd">
                 <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
-                <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();">
+                <input type="qtd" class="form-control" id="quantidade" placeholder="0" onkeypress="return onlynumber();" data-quantidade_produto>
             </div>
             <div class="mb-3 preco">
                 <label for="exampleFormControlInput1" class="form-label">Preço</label>
-                <input type="qtd" class="form-control" id="preco" placeholder="R$ 0,00" onkeypress="return onlynumber();">
+                <input type="qtd" class="form-control" id="preco" placeholder="R$ 0,00" onkeypress="return onlynumber();" data-valor_produto>
                 
             </div>
             <div class="mb-3 dtvld">
                 <label for="exampleFormControlInput1" class="form-label">Data de validade</label>
-                <input type="date" class="form-control" id="dtValidade">
+                <input type="date" class="form-control" id="dtValidade" data-dtValidade_produto>
             </div>
             <div class="mb-3 categoria">
                 <label for="exampleFormControlInput1" class="form-label">Categoria</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" id="categoria" data-categoria_produto>
                         <option value="0" disabled selected>Selecionar</option>
                         <option value="1">Alimentos</option>
                         <option value="2">Higiene</option>
@@ -134,11 +134,12 @@
                         <th scope="col">Descrição</th>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Preço</th>
-                        <th scope="col">Data</th>
+                        <th scope="col">Data de Validade</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody data-table>
+                    
+                    <!-- <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -309,10 +310,11 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
-        <button type="button" class="btn btn-danger">Gerar relatório</button>
+        <input type="submit" class="btn btn-danger" value="Gerar relatório" btn-relatorio></input>
 
     </main>
     <footer class="bg-danger text-center text-white">
@@ -363,8 +365,9 @@
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/apsii-main/Estoque/js/validacaoEstoque.js"></script>
-    <script src="/apsii-main/Estoque/js/test.js"></script>
+    <script src="/Estoque/js/validacaoEstoque.js"></script>
+    <script type="module" src="/Estoque/js/listProduto-controller.js"></script>
+    <script type="module" src="/Estoque/js/createProduto-controller.js"></script>
     <script>
         function executar(){
 var codBarras = document.getElementById('codBarras').value;
