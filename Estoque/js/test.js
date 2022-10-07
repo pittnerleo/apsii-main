@@ -2,7 +2,7 @@
 
 // let produtos = [];
 
-// http.open('GET', 'http://localhost:3000/estoque/getProdutos');
+// http.open('GET', 'http://54.94.11.167:3000/estoque/getProdutos');
 
 // http.send();
 
@@ -12,8 +12,8 @@
 //     console.log(produtos[1]);
 // }
 
-
-let url = "http://localhost:3000/estoque/getProdutos";
+function carregarTabela(){
+let url = "http://54.94.11.167:3000/estoque/getProdutos";
 fetch(url)
 .then((resp) => resp.json())
 .then(function(data) {
@@ -34,5 +34,4 @@ div.innerHTML += `<tr>
 .catch(function(error) {
 console.log(error);
 });
-
-
+}
