@@ -1,4 +1,3 @@
-
 function executar(){
 var codBarras = document.getElementById('codBarras').value;
 var lista = document.getElementById('historico');
@@ -16,5 +15,6 @@ adicionar=false;
 if(adicionar == true){
 opt.value = codBarras;
 lista.appendChild(opt);
+
 }
 }

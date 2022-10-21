@@ -85,7 +85,7 @@
         <form data-form>
             <div class="mb-3">
                 <label for="validationCustomUsername" class="form-label">Código de barras</label>
-                <input type="descricao" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" list="historico" onkeypress="return onlynumber();" data-codBarras>
+                <input type="descricao" onblur = "carregarProduto()" class="form-control" id="codBarras" name="codBarras" placeholder="Insira o códigos de barras do produto" list="historico" onkeypress="return onlynumber();" data-codBarras>
 
             <datalist id="historico">
                 <option value=""></option>
@@ -137,178 +137,6 @@
                     </tr>
                 </thead>
                 <tbody data-table>                    
-                    <!-- <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -361,33 +189,12 @@
             </div>
     </footer>
 
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/apsii-main/Estoque/js/validacaoEstoque.js"></script>
     <script type="module" src="/apsii-main/Estoque/js/listProduto-controller.js"></script>
     <script type="module" src="/apsii-main/Estoque/js/createProduto-controller.js"></script>
-    <script>
-        function executar(){
-var codBarras = document.getElementById('codBarras').value;
-var lista = document.getElementById('historico');
-var adicionar = true;
-
-var opt = document.createElement('option');
-
-
-for (i = 0; i < lista.options.length; i ++ ){
-if(codBarras== lista.options[i].value){
-adicionar=false;
-}
-}
-
-if(adicionar == true){
-opt.value = codBarras;
-lista.appendChild(opt);
-}
-}
-</script>
-
+    <script src="/apsii-main/Estoque/js/fetch.js"></script>
+    <script src="/apsii-main/Estoque/js/funcaoSalvar.js"></script>
 </body>
 
 </html>
